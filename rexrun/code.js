@@ -71,7 +71,7 @@ function playEveryFrame(){
     timer++; //every frame timer++ to calculating time
     ctx.clearRect(0,0,canvas.width,canvas.height); //Clear canvas for every frame to redrawing new position
     rex.draw();
-    scoreboard.innerText = score;
+    scoreboard.innerText = 'score :' + score;
 
     //make cactus obj
     if(timer % Math.floor(Math.random()*35 + 100) === 0){
@@ -88,6 +88,7 @@ function playEveryFrame(){
             score++;
         }
     });
+
     //collision check and game over
     cactuses.forEach((e) =>{
         const differenceX = e.x - (rex.x + rex.width);
