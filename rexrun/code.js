@@ -138,3 +138,7 @@ window.addEventListener('keypress', (a)=>{
         playEveryFrame();
     }
 });
+
+window.addEventListener('click', a =>{
+    if(rex.y === 250) isJumping = true;
+})
