@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" class="chat-box" id="input"> 
+  <button id="btn">Send</button>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.3/dist/axios.min.js"></script>
+
+  <!-- send input text to "translatetest.js"'s query -->
+  <script type="module">
+
+    const btn = document.getElementById('btn');
+    const input = document.getElementById('input');
+    btn.addEventListener('click', () => {
+      let q = 'http://localhost:3000/translate?query=' + document.querySelector('#input').value;
+      axios.get(q).then(r => {
+        var 결과 = JSON.parse(r.data).message.result.translatedText;
+        console.log(결과);
+      });
+    });
+  </script>
+
+</body>
+</html>
